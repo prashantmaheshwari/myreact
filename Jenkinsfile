@@ -4,17 +4,24 @@ pipeline {
   tools {nodejs "nodejs"}
     
   stages {
-            
+
     stage('Install dependencies') {
       steps {
-        sh 'npm install'
+        sh 'yarn install'
       }
     }
      
     stage('Build') {
       steps {
-         sh 'npm run build'
+         sh 'yarn run build'
       }
-    }      
+    }  
+    stage('Package') {
+      steps {
+         sh 'ls -lrt'
+         sh "pwd"
+         sh "tar -zcf build.tar.gz build/"
+      }
+    }    
   }
 }
