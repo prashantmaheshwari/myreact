@@ -7,13 +7,13 @@ pipeline {
 
     stage('Install dependencies') {
       steps {
-        sh 'yarn install'
+        sh 'npm install'
       }
     }
      
     stage('Build') {
       steps {
-         sh 'yarn run build'
+         sh 'npm run build'
       }
     }  
     stage('Package') {
