@@ -22,14 +22,6 @@ confirm () {
   fi
 }
 
-check_branch () {
-  if test "$(git branch --show-current)" == "master" || test "$(git branch --show-current)" == "main"
-  then
-    printf "You are on ${LRED}$(git branch --show-current)${NC}.\n"
-    confirm
-  fi
-}
-
 no_console () {
   consoleRegexp='^[^-].*console.log'
   filenameRegexp='^[^-].*console.log(\|^+++'
@@ -43,7 +35,6 @@ no_console () {
 }
 
 ### RUN THROUGH CHECKS AND STOP IF THERE IS A PROBLEM
-check_branch
 no_console
 
 printf "${GREEN}Proceeding with commit...${NC}\n"
