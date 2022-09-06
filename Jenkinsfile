@@ -28,6 +28,11 @@ pipeline {
          sh "pwd"
          sh "tar -zcf build.tar.gz build/"
       }
+    }
+    stage('Start the App'){
+      steps{
+        sh 'yarn start'
+      }
     }    
   }
 }
