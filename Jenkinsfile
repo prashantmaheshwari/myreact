@@ -21,7 +21,7 @@ pipeline {
         sh 'npm run test'
       }
     }
-    
+    //to package the complete app
     stage('Package') {
       steps {
          sh 'ls -lrt'
