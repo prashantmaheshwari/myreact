@@ -28,6 +28,6 @@ pipeline {
          sh "pwd"
          sh "tar -zcf build.tar.gz build/"
       }
-    }    
+    }  
   }
 }
